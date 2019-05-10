@@ -42,6 +42,9 @@ gem 'html2haml'
 gem 'hamlit'
 gem 'active_decorator'
 gem 'materialize-sass'
+gem 'simple_form'
+gem 'enumerize'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
