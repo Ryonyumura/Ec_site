@@ -24,6 +24,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_decorator (1.2.0)
     activejob (5.2.3)
       activesupport (= 5.2.3)
       globalid (>= 0.3.6)
@@ -94,6 +95,10 @@ GEM
       activesupport (>= 4.2.0)
     haml (5.0.4)
       temple (>= 0.8.0)
+      tilt
+    hamlit (2.9.3)
+      temple (>= 0.8.0)
+      thor
       tilt
     html2haml (2.2.0)
       erubis (~> 2.7.0)
@@ -229,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_decorator
   annotate
   bootsnap (>= 1.1.0)
   byebug
@@ -237,6 +243,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   faker
+  hamlit
   html2haml
   jbuilder (~> 2.5)
   letter_opener

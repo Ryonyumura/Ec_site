@@ -39,6 +39,8 @@ gem 'devise'
 gem "letter_opener"
 gem 'annotate'
 gem 'html2haml'
+gem 'hamlit'
+gem 'active_decorator'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
