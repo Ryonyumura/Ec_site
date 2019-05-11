@@ -1,7 +1,7 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
-#                      root GET    /                                                                                        home#index
+#                      root GET    /                                                                                        products#index
 #          new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
 #              user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
 #      destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
@@ -20,6 +20,10 @@
 #     new_user_confirmation GET    /users/confirmation/new(.:format)                                                        devise/confirmations#new
 #         user_confirmation GET    /users/confirmation(.:format)                                                            devise/confirmations#show
 #                           POST   /users/confirmation(.:format)                                                            devise/confirmations#create
+#                  products GET    /products(.:format)                                                                      products#index
+#                           POST   /products(.:format)                                                                      products#create
+#               new_product GET    /products/new(.:format)                                                                  products#new
+#                   product GET    /products/:id(.:format)                                                                  products#show
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -30,5 +34,5 @@ Rails.application.routes.draw do
  root to: "products#index"
 
  devise_for :users
- resources :products, only: %i(new create)
+ resources :products, only: %i(index show new create)
 end

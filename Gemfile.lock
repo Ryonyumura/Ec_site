@@ -108,6 +108,10 @@ GEM
       temple (>= 0.8.0)
       thor
       tilt
+    hashid-rails (1.2.2)
+      activerecord (>= 4.0)
+      hashids (~> 1.0)
+    hashids (1.0.5)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -266,6 +270,7 @@ DEPENDENCIES
   enumerize
   faker
   hamlit
+  hashid-rails
   html2haml
   jbuilder (~> 2.5)
   jquery-rails

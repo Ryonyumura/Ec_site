@@ -1,0 +1,15 @@
+%h2.center
+  商品の説明
+
+.row
+  .col.s12.m7
+    .card
+      .card-image
+        = image_tag(@product.image.url || "sample.jpg")
+        %span.card-title
+          #{@product.name}（#{@product.display_price}）
+      .card-content
+        %p
+        = @product.description
+      .card-action
+        = link_to("購入する","#")

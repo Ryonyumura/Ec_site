@@ -9,9 +9,12 @@
 #  unit        :string           default("yen"), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  image       :string
 #
 
 class Product < ApplicationRecord
+  include Hashid::Rails
+
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true
