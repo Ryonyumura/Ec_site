@@ -13,6 +13,8 @@
 #
 
 class Product < ApplicationRecord
+  has_many :basket_products, dependent: :destroy
+
   include Hashid::Rails
 
   mount_uploader :image, ImageUploader

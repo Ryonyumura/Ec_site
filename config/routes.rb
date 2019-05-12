@@ -20,8 +20,9 @@
 #     new_user_confirmation GET    /users/confirmation/new(.:format)                                                        devise/confirmations#new
 #         user_confirmation GET    /users/confirmation(.:format)                                                            devise/confirmations#show
 #                           POST   /users/confirmation(.:format)                                                            devise/confirmations#create
-#                  products GET    /products(.:format)                                                                      products#index
-#                           POST   /products(.:format)                                                                      products#create
+#    product_add_to_baskets POST   /products/:product_id/add_to_baskets(.:format)                                           products/add_to_baskets#create
+# product_delete_in_baskets POST   /products/:product_id/delete_in_baskets(.:format)                                        products/delete_in_baskets#create
+#                  products POST   /products(.:format)                                                                      products#create
 #               new_product GET    /products/new(.:format)                                                                  products#new
 #                   product GET    /products/:id(.:format)                                                                  products#show
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
@@ -34,5 +35,12 @@ Rails.application.routes.draw do
  root to: "products#index"
 
  devise_for :users
- resources :products, only: %i(index show new create)
+
+ resource  :basket, only: %i(show)
+ resources :products, only: %i(show new create) do
+   scope module: :products do
+     resources :add_to_baskets, only: %i(create)
+     resources :delete_in_baskets, only: %i(create)
+   end
+ end
 end
