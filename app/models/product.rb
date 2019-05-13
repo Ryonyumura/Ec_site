@@ -14,6 +14,7 @@
 
 class Product < ApplicationRecord
   has_many :basket_products, dependent: :destroy
+  has_many :purchase_product_records, dependent: :destroy
 
   include Hashid::Rails
 

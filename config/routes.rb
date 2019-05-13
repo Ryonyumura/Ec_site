@@ -37,6 +37,7 @@ Rails.application.routes.draw do
  devise_for :users
 
  resource  :basket, only: %i(show)
+ resource :charge,  only: %i(create)
  resources :products, only: %i(show new create) do
    scope module: :products do
      resources :add_to_baskets, only: %i(create)
