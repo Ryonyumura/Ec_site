@@ -3,6 +3,7 @@
 # Table name: products
 #
 #  id          :integer          not null, primary key
+#  admin_id    :integer          not null
 #  name        :string           not null
 #  description :text             not null
 #  price       :integer          not null
@@ -15,6 +16,7 @@
 class Product < ApplicationRecord
   has_many :basket_products, dependent: :destroy
   has_many :purchase_product_records, dependent: :destroy
+  belongs_to :admin
 
   include Hashid::Rails
 

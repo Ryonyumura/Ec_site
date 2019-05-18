@@ -12,4 +12,7 @@
         %p
         = @product.description
       .card-action
-        = link_to "買い物かごに入れる", product_add_to_baskets_path(@product), method: :post
+        - def product_add_to_baskets_path(product)
+# code here
+end
+  = link_to "買い物かごに入れる", product_add_to_baskets_path(@product), method: :post

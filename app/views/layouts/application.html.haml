@@ -10,4 +10,13 @@
   %body
     %p.notice= notice
     %p.alert= alert
+    %nav
+      .nav-wrapper
+        %ul#nav-mobile.right.hide-on-med-and-down
+          - if current_user.present?
+            %li
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+          - elsif current_admin.present?
+            %li
+              = link_to 'ログアウト（アドミン）', destroy_admin_session_path, method: :delete
     = yield
