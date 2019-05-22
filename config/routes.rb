@@ -15,8 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :admin do
-    root to: "dashbords#index"
+  namespace :admins do
+    root to: "dashboards#index"
     resources :products, only: %i(new create)
+    resource :sales_record, only: %i(show)
   end
 end
