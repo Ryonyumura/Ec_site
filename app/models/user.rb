@@ -30,7 +30,7 @@ class User < ApplicationRecord
     basket || create_basket
   end
 
-  def prepare_purhcase_record
+  def prepare_purchase_record
     purchase_record || create_purchase_record
   end
 

@@ -1,5 +1,4 @@
 # README
-
 * CRUD機能
 * Deviseでユーザー登録
 * Adminで商品管理

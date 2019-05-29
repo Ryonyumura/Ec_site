@@ -14,8 +14,7 @@ class Basket < ApplicationRecord
   belongs_to :user, dependent: :destroy
 
   def total_price(product_ids: nil)
-       products = product_ids ? self.products.where(id: product_ids) : self.products
-       PriceCalculator.total(products)
+    products = product_ids ? self.products.where(id: product_ids) : self.products
+    PriceCalculator.total(products)
   end
-
 end

@@ -10,6 +10,6 @@
 
 class PurchaseRecord < ApplicationRecord
   belongs_to :user
-  has_many :purchase_product_records, dependent: :destroy
-  has_many :products, through: :purchase_record_products
+  has_many :purchase_record_products, dependent: :destroy
+  has_many :products, through: :purchase_ecord_products
 end
